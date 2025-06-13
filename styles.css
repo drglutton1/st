@@ -32,3 +32,32 @@ button:hover {
     width: 100%;
   }
 }
+
+#cat-container {
+  margin: 2rem auto;
+  width: 300px;
+  height: 300px; /* фіксована висота, щоб місце було з самого початку */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px; /* додає округлість краям контейнера */
+  background-color: #ddd; /* тимчасове тло до завантаження */
+}
+
+#cat-container:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+#cat-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 16px; /* округлі краї самого зображення */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+#cat-img.fade-out {
+  opacity: 0;
+}
