@@ -7,12 +7,24 @@
   <title>Hello Frontend</title>
 </head>
 <body>
-<h1>Hello, Frontend!</h1>
+<h1>Hello, Kitties!</h1>
 <div style="display: flex; flex-direction: column; align-items: center;">
-    <img src="https://beautifultogethersanctuary.com/wp-content/uploads/2025/05/Foster-Kitten-Athena-200x200.jpg" alt="kitten" style="border-radius: 16px; display: block;"/>
+    <img id="cat-img" src="https://cataas.com/cat?width=300&height=300" alt="cat" />
     <a href="https://www.google.com/search?q=kittens" target="_blank">
       <button type="button" style="margin-top: 16px;">Search for kittens</button>
     </a>
 </div>
+<script>
+  function loadCat() {
+    const catImg = document.getElementById('cat-img');
+    const timestamp = new Date().getTime(); // унікальний час
+    catImg.src = `https://cataas.com/cat?width=300&height=300&ts=${timestamp}`;
+  }
+</script>
+<button onclick="loadCat()" style="margin-top: 16px;">Load New Cat</button>
+<script>
+  // Завантаження нового кота при завантаженні сторінки
+  window.onload = loadCat;
+</script>
 </body>
 </html>
